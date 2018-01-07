@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list inset>
+    <ion-item>
+      <ion-label><ion-icon name="person"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="name" placeholder="Name" type="text"></ion-input>
+    </ion-item>
+    <p class="validation" *ngIf="valid.name">* {{valid.name}}</p>
+    <ion-item>
+      <ion-label><ion-icon name="call"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="phone" placeholder="Mobile Number" type="number"></ion-input>
+    </ion-item>
+    <p class="validation" *ngIf="valid.phone">* {{valid.phone}}</p>
+    <ion-item>
+      <ion-label><ion-icon name="mail"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="email" placeholder="Email" type="email"></ion-input>
+    </ion-item>
+    <p class="validation" *ngIf="valid.email">* {{valid.email}}</p>
+    <ion-item>
+      <ion-label><ion-icon name="lock"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="password" placeholder="Password" type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><ion-icon name="lock"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="confirmPassword" placeholder="Confirm password" type="password"></ion-input>
+    </ion-item>
+    <p class="validation" *ngIf="valid.password">* {{valid.password}}</p>
+  </ion-list>
+
+  <div padding>
+    <button ion-button (click)="register()" full round>Register</button>
+  </div>
+</ion-content>

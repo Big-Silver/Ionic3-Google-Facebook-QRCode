@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Log In</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list inset>
+    <ion-item>
+      <ion-label><ion-icon name="mail"></ion-icon> / <ion-icon name="call"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="email" placeholder="Email or Mobile Number" type="text"></ion-input>
+    </ion-item>
+    <p class="validation" *ngIf="valid.email">* {{valid.email}}</p>
+    <p class="validation" *ngIf="valid.phone">* {{valid.phone}}</p>
+    <ion-item>
+      <ion-label><ion-icon name="lock"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="password" placeholder="Password" type="password"></ion-input>
+    </ion-item>
+    <p class="validation" *ngIf="valid.password">* {{valid.password}}</p>
+    <p class="validation" *ngIf="touched == true && valid != {} && !valid.password && !valid.email && !valid.phone">* {{valid}}</p>
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="primary" round full (click)="login()">Log In</button>
+  </div>
+
+  <div padding class="social-btns">
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button (click)="fbLogin()" full>
+          Login with <ion-icon name="logo-facebook"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button (click)="goLogin()" full>
+          Login with <ion-icon name="logo-googleplus"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div padding class="signup-section">
+    <label>Don't have an account? </label>
+    <a (click)="launchSignup()" class="create-account">Sign up</a>
+  </div>
+</ion-content>

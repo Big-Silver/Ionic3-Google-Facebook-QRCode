@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Show QR</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+    <ion-col col-12>
+      <qr-code [value]="uuid" [size]="150" [backgroundAlpha]="0.5" [padding]="10"></qr-code>      
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+<ion-footer>
+  <ion-segment>
+    <ion-segment-button value="kittens" (click)="goHome()"><ion-icon name="home"></ion-icon>Home</ion-segment-button>
+    <ion-segment-button value="puppies" class="activated"><ion-icon name="qr-scanner"></ion-icon>Show QR</ion-segment-button>
+  </ion-segment>   
+</ion-footer>

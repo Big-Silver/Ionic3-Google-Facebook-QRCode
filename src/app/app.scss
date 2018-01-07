@@ -1,0 +1,29 @@
+.ios, .md {
+    // ion-segment-button.activated, ion-segment-button:hover {
+    //     background-color: #488aff;
+    //     color: #ffffff;
+    // }
+
+    ion-footer ion-segment-button {
+        height: 60px !important;
+        border-radius: 0 !important;
+    }
+
+    ion-segment-button ion-icon {
+        display: block;
+        line-height: 0;
+        margin-top: 5px;
+    }
+
+    page-showqr {
+        ion-col {
+            text-align: center;
+        }
+    }
+
+    p.validation {
+        color: #ff0000;
+        font-size: 12px;
+        opacity: .7;
+    }
+}
